@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="payrol">
     <section class="payroll-calculator container mt-5">
       <h2 class="text-center text-dark mb-4">Payroll Calculator</h2>
@@ -29,6 +30,40 @@
 
       <!-- Modal Section -->
       <div v-if="showModal" class="modal-overlay">
+=======
+   <div class="payrol">
+    <section class="payroll-calculator container mt-5">
+      <h2 class="text-center text-dark mb-4">Payroll Calculator</h2>
+      
+      <!-- Employee Data Table -->
+      <table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Employee ID</th>
+      <th>Hours Worked</th>
+      <th>Leave Deductions</th>
+      <th>Final Salary</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="employee in $store.state.employees" :key="employee">
+      <td>{{ employee.employee_id }}</td>
+      <td>{{ employee.hours_worked }}</td>
+      <td>{{ employee.leave_deductions }}</td>
+      <td>{{ employee.final_salary }}</td>
+      <td>
+        <button class="btn btn-primary btn-sm">
+          Calculate Payslip
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+      <!-- Modal Section -->
+       <div v-if="showModal" class="modal-overlay">
+>>>>>>> 7e15018 (Updated the project with new functions and connections to the back end)
         <div class="modal-content">
           <h4 class="mb-3">Payslip Details</h4>
           <p>Employee ID: {{ selectedEmployeeData?.employeeId }}</p>
@@ -37,6 +72,7 @@
           <p class="font-weight-bold text-success">Final Salary: R{{ payResult }}</p>
 
           <!-- Close Modal Button -->
+<<<<<<< HEAD
           <button class="btn btn-secondary" @click="closeModal">Close</button>
         </div>
       </div>
@@ -81,6 +117,59 @@ export default {
     },
   },
 };
+=======
+           <button class="btn btn-secondary" @click="closeModal">Close</button>
+        </div>
+      </div> 
+     </section>
+  </div>  
+</template>
+
+<script>
+export default{
+  // it runs code the moment the comp loads
+  mounted(){
+    this.$store.dispatch('getPayroll')
+  }
+}
+
+// export default {
+//   data() {
+//     return {
+//       // Sample employee payroll data
+//       payrollData: [
+//         { employeeId: 1, hoursWorked: 160, leaveDeductions: 8, finalSalary: 69500 },
+//         { employeeId: 2, hoursWorked: 150, leaveDeductions: 10, finalSalary: 79000 },
+//         { employeeId: 3, hoursWorked: 170, leaveDeductions: 4, finalSalary: 54800 },
+//         { employeeId: 4, hoursWorked: 165, leaveDeductions: 6, finalSalary: 59700 },
+//         { employeeId: 5, hoursWorked: 158, leaveDeductions: 5, finalSalary: 57850 },
+//         { employeeId: 6, hoursWorked: 168, leaveDeductions: 2, finalSalary: 64800 },
+//         { employeeId: 7, hoursWorked: 175, leaveDeductions: 3, finalSalary: 71800 },
+//         { employeeId: 8, hoursWorked: 160, leaveDeductions: 0, finalSalary: 56000 },
+//         { employeeId: 9, hoursWorked: 155, leaveDeductions: 5, finalSalary: 61500 },
+//         { employeeId: 10, hoursWorked: 162, leaveDeductions: 4, finalSalary: 57750 },
+//       ],
+//       showModal: false, // Controls modal visibility
+//       selectedEmployeeData: null, // Stores selected employee data
+//       payResult: null, // Stores calculated pay
+//     };
+//   },
+//   methods: {
+//     // Select an employee and calculate their pay
+//     selectEmployee(employee) {
+//       this.selectedEmployeeData = employee;
+//       this.payResult = employee.finalSalary;
+//       this.showModal = true; // Open modal after calculation
+//     },
+//     // Close the modal
+//     closeModal() {
+//       this.showModal = false;
+//       this.selectedEmployeeData = null;
+//       this.payResult = null;
+//     },
+//   },
+// };
+>>>>>>> 7e15018 (Updated the project with new functions and connections to the back end)
 </script>
 
 <style scoped>

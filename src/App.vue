@@ -29,7 +29,14 @@
               <router-link to="/payroll" class="nav-link" active-class="active">Payroll</router-link>
             </li>
             <li class="nav-item">
+<<<<<<< HEAD
               <router-link to="/timeoff" class="nav-link" active-class="active">Time-off</router-link>
+=======
+              <router-link to="/attendance" class="nav-link" active-class="active">Attendance</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/leave" class="nav-link" active-class="active">Leave</router-link>
+>>>>>>> 7e15018 (Updated the project with new functions and connections to the back end)
             </li>
             <li class="nav-item">
               <router-link to="/login" class="nav-link" active-class="active">Log-Out</router-link>
